@@ -11,5 +11,6 @@
 - Gebruik zoveel mogelijk Ansible modules voor Docker in plaats van apt en shell
 - De deployment wordt uitgevoerd met een Github-actions workflow
 - Verwijderen van de uitgerolde infrastructuur kan met een workflow
+- Aanpassingen worden in aparte branches gedaan, niet in main. Branches worden gemerged in *main* 
 
 ----
