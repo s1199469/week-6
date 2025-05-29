@@ -13,4 +13,6 @@
 - Verwijderen van de uitgerolde infrastructuur kan met een workflow
 - Aanpassingen worden in aparte branches gedaan, niet in main. Branches worden gemerged in *main* 
 
+
+https://medium.com/@18bhavyasharma/using-ansible-to-manage-docker-containers-b49aa32fa27f
 ----
