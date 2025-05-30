@@ -1,0 +1,15 @@
+# test simpel terraform destry workflow
+name: terraform removal
+on:
+  workflow_dispatch:
+    
+jobs:
+  remove_deployed_vm:
+    runs-on: self-hosted
+    steps:
+           
+      - name: run terraform removal (test)
+        run: |
+          terraform init
+          terraform destroy -auto-approve
+      
