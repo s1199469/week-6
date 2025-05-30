@@ -38,5 +38,7 @@ https://medium.com/@18bhavyasharma/using-ansible-to-manage-docker-containers-b49
 4. kies import role
 5. Vul de naam van de repository in (let op: de naam **ansible_role_docker** is voldoende)
 6. Klik op **import**
-3. 
+7. Bij roles>import log staan waarschuwingen omdat ansible-galaxy een syntax check doet. Corrigeer eventueel in de broncode, push deze naar de repo en klik in ansible galaxy op **Import new version** om bij te werken
+8. Voer op de deployment server het volgende commando uit: **ansible-galaxy role install s1199469/docker**
+
 
