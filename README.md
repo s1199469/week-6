@@ -27,9 +27,16 @@ https://medium.com/@18bhavyasharma/using-ansible-to-manage-docker-containers-b49
 
 4. Het playbook gecontroleerd, gechecked met --check en getest op in mijn sandbox deployment. De playbook is geschikt bevonden 
 5. De inhoud van de playbook gekopieerd naar \my-docker\tasks\main.tf in de lokale repo
-6. nieuwe repo gemaakt voor de role: **s1199469/my-docker_role**
+6. nieuwe repo gemaakt voor de role: **s1199469/ansible_role_docker**
 7. Inhoud van \my-docker gekopieerd naar de nieuwe repo
 8. my-docker repo gepusht naar Github
 
 # toevoegen aan ansible-galaxy
+1. Log in op Ansible galaxy
+2. ga naar **role Namespaces**
+3. ga naar de namespace (heeft de username als naam)
+4. kies import role
+5. Vul de naam van de repository in (let op: de naam **ansible_role_docker** is voldoende)
+6. Klik op **import**
+3. 
 

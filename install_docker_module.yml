@@ -1,0 +1,8 @@
+# Installatie van Community.docker op deployment server
+# met deze module kan docker worden beheerd op remote hosts
+---
+- name: Install Community.docker on local host
+  hosts: localhost
+  tasks:
+    - name: run installation
+      local_action: command ansible-galaxy collection install community.docker
