@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  install servers:
+  install_servers:
     runs-on: self-hosted
      
     steps:
