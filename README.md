@@ -49,12 +49,12 @@ De terraform configuratiefiles staan in de mappen /test en /Productie
 
 De deployment wordt aangeroepen uit de root waarbij de optie -chdir=test | productie ervoor zorgt dat de betreffende subdirectory de werkmap wordt. Terraform pakt alle configuraties uit deze werkmap.
 
-Ik heb eerst geprobeerd te werken met 1 main.tf maar bij de deployment van productie warden de VM's vervangen. Dit komt omdat iedere resource in terraform een letterlijke "identifier" heeft. Het is misschien mogelijk maar ik heb binen een redelijke tijd geen oplossing gevonden. Bijkomend voordeel van een apart main.tf in /test is dat wijzigingen in main.tf getest kunnen worden zonder invloed op de bestaande productie-deployment.
-
+Ik heb eerst geprobeerd te werken met 1 main.tf maar bij de deployment van productie warden de VM's vervangen. Dit komt omdat iedere resource in main.tf een letterlijke "identifier" heeft (bijv. VM-1). Het is misschien mogelijk maar ik heb binnen een redelijke tijd geen oplossing kunnen vinden. Bijkomend voordeel van een apart main.tf in /test is dat wijzigingen in main.tf getest kunnen worden zonder dat het invloed heeft op de bestaande productie-deployment.
+----
 
 # ansible-galaxy role voor Docker installatie
 De ansible playbook files staan in de subdirectory /Ansible
-1. Op deployment VM een basisinrichting uitgevoerd met het commando: **ansible-galaxy init my-docker**
+1. Op deployment VM een basisconfiguratie uitgevoerd met het commando: **ansible-galaxy init my-docker**
 2. De opgebouwde folderstructuur gekopieerd naar het lokale werkstation met MobaXterm (Er is een probleem met git waardoor het niet met een git push via de repo kan) 
 3. Op de website van Docker de installatiescripts gedownload en met AI laten omzetten in een ansible-playbook (install_docker.yml)
 
