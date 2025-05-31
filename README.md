@@ -45,6 +45,8 @@ https://medium.com/@18bhavyasharma/using-ansible-to-manage-docker-containers-b49
 
 # toelichting
 ## Test en Productie
+De terraform configuratiefiles staan in de mappen /test en /Productie
+de deployment wordt aangeroepen uit de root waarbij de optie -chdir=test | productie ervoor zorgt dat de betreffende subdirectory de werkmap wordt. Terraform pakt alle configuraties uit deze werkmap.
 
 
 # ansible-galaxy role voor Docker installlatie
