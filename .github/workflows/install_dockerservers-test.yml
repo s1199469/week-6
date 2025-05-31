@@ -1,0 +1,20 @@
+ # installeer test
+name: deploy machines with terraform to test
+on:
+  workflow_dispatch:
+    
+jobs:
+  install servers:
+    runs on: self-hosted
+     
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: run terraform Deployment (test)
+        run: |
+          terraform -chdir=test init
+          terraform -chdir=test validate
+          terraform -chdir=test fmt
+          terraform -chdir=test plan -var-file week6-test.tfvars
+          terraform -chdir=test apply -var-file week6-test.tfvars -auto-approve
+          

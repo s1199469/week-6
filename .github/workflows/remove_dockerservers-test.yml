@@ -1,0 +1,13 @@
+name: remove machines with terraform from test
+on:
+  workflow_dispatch:
+    
+jobs:
+  remove servers:
+    runs on: self-hosted
+    steps:
+      - name: run terraform VM Uninstall (test)
+        run: |
+          terraform -chdir=test init
+          terraform -chdir=test destroy -var-file week6-test.tfvars -auto-approve
+          
