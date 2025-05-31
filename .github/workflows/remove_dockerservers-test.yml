@@ -1,4 +1,4 @@
-name: deploy machines with terraform to test
+name: remove machines with terraform from test
 on:
   workflow_dispatch:
     
