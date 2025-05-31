@@ -8,6 +8,5 @@ jobs:
     steps:
       - name: run day2operations on test
         run: |
-          ansible-playbook -i test/inventory.ini ansible/day2operations-t.yml
-          ansible-playbook -i test/inventory.ini ansible/install_docker.yml
+          ansible-playbook -i test/inventory.ini create_hello-world_container
           
