@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  remove_servers:
+  run_day2_operations on test:
     runs-on: self-hosted
     steps:
       - name: run day2operations on test
