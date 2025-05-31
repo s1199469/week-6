@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  run_day2_operations on test:
+  install_container:
     runs-on: self-hosted
     steps:
       - name: run day2operations on test
