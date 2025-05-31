@@ -4,7 +4,7 @@ on:
     
 jobs:
   remove servers:
-    runs on: self-hosted
+    runs-on: self-hosted
     steps:
       - name: run terraform VM Uninstall (test)
         run: |
