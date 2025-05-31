@@ -1,4 +1,4 @@
-name: run Ansible configuration playbook on test
+name: create hello-world container on test
 on:
   workflow_dispatch:
     
