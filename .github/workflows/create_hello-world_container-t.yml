@@ -8,5 +8,5 @@ jobs:
     steps:
       - name: run day2operations on test
         run: |
-          ansible-playbook -i test/inventory.ini create_hello-world_container-t.yml
+          ansible-playbook -i test/inventory.ini ansible/create_hello-world_container-t.yml
           
