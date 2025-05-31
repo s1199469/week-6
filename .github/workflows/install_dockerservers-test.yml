@@ -17,7 +17,7 @@ jobs:
           terraform -chdir=test fmt
           terraform -chdir=test plan -var-file week6-test.tfvars
           terraform -chdir=test apply -var-file week6-test.tfvars -auto-approve
-      - name: run Day2 operations with terraform (test):
+      - name: run Day2 operations with terraform (test)
         run: |
           ansible-playbook -i test/inventory.ini ansible/day2operations-t.yml
         
