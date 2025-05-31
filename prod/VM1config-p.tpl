@@ -1,4 +1,6 @@
  #cloud-config
+
+ # TEST
 packages:
   - wget
   - ntpdate
