@@ -1,0 +1,13 @@
+name: run Ansible confugarion playbook on test
+on:
+  workflow_dispatch:
+    
+jobs:
+  remove_servers:
+    runs-on: self-hosted
+    steps:
+      - name: run day2operations on test
+        run: |
+          ansible-playbook -i test/inventory.ini ansible/day2operations-t.yml
+          ansible-playbook -i test/inventory.ini ansible/install_docker.yml
+          
