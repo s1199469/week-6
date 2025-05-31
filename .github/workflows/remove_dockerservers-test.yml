@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     
 jobs:
-  remove servers:
+  remove_servers:
     runs-on: self-hosted
     steps:
       - name: run terraform VM Uninstall (test)
