@@ -40,7 +40,9 @@ terraform -chdir=prod destroy -var-file week6-prod.tfvars -auto-approve
 - Aanpassingen worden in aparte branches gedaan, niet in main. Branches worden gemerged in *main* 
 
 
-https://medium.com/@18bhavyasharma/using-ansible-to-manage-docker-containers-b49aa32fa27f
+*https://medium.com/@18bhavyasharma/using-ansible-to-manage-docker-containers-b49aa32fa27f*
+
+
 ----
 
 # toelichting
@@ -48,8 +50,8 @@ https://medium.com/@18bhavyasharma/using-ansible-to-manage-docker-containers-b49
 De terraform configuratiefiles staan in de mappen /test en /Productie
 
 De deployment wordt aangeroepen uit de root waarbij de optie -chdir=test | productie ervoor zorgt dat de betreffende subdirectory de werkmap wordt. Terraform pakt alle configuraties uit deze werkmap.
-
 Ik heb eerst geprobeerd te werken met 1 main.tf maar bij de deployment van productie warden de VM's vervangen. Dit komt omdat iedere resource in main.tf een letterlijke "identifier" heeft (bijv. VM-1). Het is misschien mogelijk maar ik heb binnen een redelijke tijd geen oplossing kunnen vinden. Bijkomend voordeel van een apart main.tf in /test is dat wijzigingen in main.tf getest kunnen worden zonder dat het invloed heeft op de bestaande productie-deployment.
+
 ----
 
 # ansible-galaxy role voor Docker installatie
