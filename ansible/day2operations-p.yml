@@ -1,0 +1,21 @@
+- name: day 2 operations
+  hosts: all
+  become: yes
+  vars: 
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+  tasks:
+    - name: install docker
+      include_role:
+        name: s1199469.docker # installed from docker galaxy
+      
+    - name: copy ssh private key for access to VM2
+      ansible.builtin.copy:
+        src: ~/.ssh/week6key
+        dest: /home/testuser/.ssh
+        owner: testuser
+        group: testuser
+        mode: '0400'
+      when: group_names|intersect(['ESXservers'])
+      
+ 
+ 
