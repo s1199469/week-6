@@ -1,5 +1,6 @@
+
  # Deploy 1 Ubuntu server VM op ESXi en 1 Ubuntu server VM op Azure
-# Details voor de provider
+ # Details voor de provider
 provider "esxi" {
   esxi_hostname      = var.esxi_hostname
   esxi_hostport      = var.esxi_hostport
