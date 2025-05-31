@@ -3,9 +3,8 @@ on:
   workflow_dispatch:
     
 jobs:
-  - install servers:
+   remove servers:
      -runs on: self-hosted
-      
       steps:
         - name: run terraform VM Uninstall (test)
           run: |
