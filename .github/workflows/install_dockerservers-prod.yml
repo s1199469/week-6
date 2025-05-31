@@ -17,4 +17,7 @@ jobs:
           terraform -chdir=prod fmt
           terraform -chdir=prod plan -var-file week6-prod.tfvars
           terraform -chdir=prod apply -var-file week6-prod.tfvars -auto-approve
+       - name: run Day2 operations with terraform (prod)
+         run: |
+          ansible-playbook -i prod/inventory.ini ansible/day2operations-p.yml
           
