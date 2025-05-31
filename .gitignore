@@ -1,6 +1,5 @@
 # ignore folders
 backup/
-TEST/
 .terraform/
 # ignore file extensions
 *.pem
