@@ -5,8 +5,8 @@ on:
 jobs:
   - install servers:
      -runs on: self-hosted
+      
       steps:
-        # checkout moet worden weggelaten omdat anders de config op de runner wordt overschreven 
         - name: run terraform VM Uninstall (test)
           run: |
             terraform -chdir=test init
