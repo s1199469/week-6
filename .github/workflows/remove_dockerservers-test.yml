@@ -1,0 +1,16 @@
+name: deploy machines with terraform to test
+on:
+  workflow_dispatch:
+    
+jobs:
+  - install servers:
+     -runs on: self-hosted
+     
+      steps:
+        # checkout moet worden weggelaten omdat anders de config op de runner wordt overschreven 
+      
+        - name: run terraform VM Uninstall (test)
+        run: |
+          terraform -chdir=test init
+          terraform -chdir=test destroy -var-file week6-test.tfvars -auto-approve
+          
