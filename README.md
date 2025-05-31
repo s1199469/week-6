@@ -80,5 +80,8 @@ De ansible playbook files staan in de subdirectory /Ansible
 
 ----
 # bijzonderheden
-De Esxi provider ondersteunt, in tegenstelling tot de azurerm provider, niet het kopiëren van een ssh public-key naar de host. De key wordt daarom aangemaakt met cloud-init.
+-De Esxi provider ondersteunt, in tegenstelling tot de azurerm provider, niet het kopiëren van een ssh public-key naar de host. De key wordt daarom aangemaakt met cloud-init.
+
+-Als een ansible playbook wordt gewijzigd dan moet de VM deployment opnieuw worden uitgevoerd (destroy-apply). De wijzigingen worden anders niet naar de _work folder van de self-hosted runner gekopieerd
+
 
