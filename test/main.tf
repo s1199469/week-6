@@ -1,4 +1,4 @@
-
+ # opdracht week-6
  # Deploy 1 Ubuntu server VM op ESXi en 1 Ubuntu server VM op Azure
  # Details voor de provider
 provider "esxi" {
