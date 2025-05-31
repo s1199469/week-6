@@ -1,7 +1,7 @@
 # IAC LAB -WEEK-6
 -------
 ## synopsis
-# Deliverables:
+### Deliverables:
 - 1x VM met Docker, gehost op ESXi
 - 1x VM met Docker, gehost in Azure
 - beide servers bereikbaar met SSH
@@ -32,7 +32,7 @@ terraform -chdir=prod destroy -var-file week6-prod.tfvars -auto-approve
 
 
 # uitgangspunten:
-- Test en Productie kunnen met Terraform loas van elkaar worden uitgerold
+- Test en Productie kunnen met Terraform los van elkaar worden uitgerold
 - Hergebruik zoveel mogelijk Terraform Manifest en Ansible playbooks uit vorige opdrachten (Lab 2A en 2B)
 - Gebruik zoveel mogelijk Ansible modules voor Docker in plaats van apt en shell. Het moet een ansible-galaxy role zijn die zelf is toegevoegd
 - De deployment wordt uitgevoerd met een Github-actions workflow
@@ -48,6 +48,8 @@ https://medium.com/@18bhavyasharma/using-ansible-to-manage-docker-containers-b49
 De terraform configuratiefiles staan in de mappen /test en /Productie
 
 De deployment wordt aangeroepen uit de root waarbij de optie -chdir=test | productie ervoor zorgt dat de betreffende subdirectory de werkmap wordt. Terraform pakt alle configuraties uit deze werkmap.
+
+Ik heb eerst geprobeerd te werken met 1 main.tf maar bij de deployment van productie warden de VM's vervangen. Dit komt omdat iedere resource in terraform een letterlijke "identifier" heeft. Het is misschien mogelijk maar ik heb binen een redelijke tijd geen oplossing gevonden. Bijkomend voordeel van een apart main.tf in /test is dat wijzigingen in main.tf getest kunnen worden zonder invloed op de bestaande productie-deployment.
 
 
 # ansible-galaxy role voor Docker installatie
@@ -76,5 +78,5 @@ De ansible playbook files staan in de subdirectory /Ansible
 
 ----
 # bijzonderheden
-De Esxi provider ondersteunt, in tegenstelling tot de azureerm provider, niet het kopieren van een ssh public-key naar de host. De key wordt daarom aangemaakt met cloud-init.
+De Esxi provider ondersteunt, in tegenstelling tot de azurerm provider, niet het kopiëren van een ssh public-key naar de host. De key wordt daarom aangemaakt met cloud-init.
 
