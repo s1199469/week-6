@@ -1,0 +1,46 @@
+---
+- name: Create Hello World container
+  hosts: all
+  become: yes
+  tasks:
+    - name: Pull hello-world image
+      community.docker.docker_image_pull:
+        name: hello-world
+      register: pull_output
+      
+    - name: show image pull result
+      ansible.builtin.debug:
+        var: pull_output
+        
+    - name: check image 
+      community.docker.docker_image_info:
+        name: hello-world
+      
+    - name: install hello world
+      community.docker.docker_container:
+        name: s1199469-hello_world
+        image: hello-world
+      register: install_output
+    
+    - name: show image install result
+      ansible.builtin.debug:
+        var: install_output
+      register: check_image_result
+      
+    - name: show check image result
+      ansible.builtin.debug:
+        var: check_image_result
+        
+    - name: start container
+      community.docker.docker_container:
+        name: s1199469-hello_world
+        state: started
+        output_logs: true
+      register: container_status
+        
+    - name: confirm container run
+      ansible.builtin.debug:
+        msg: "Hello-world is able to run"
+      when: container_status is succeeded
+    
+    

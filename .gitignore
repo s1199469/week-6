@@ -1,0 +1,8 @@
+# ignore folders
+backup/
+.terraform/
+# ignore file extensions
+*.pem
+*.bak
+*.tfstate
+providers.tf

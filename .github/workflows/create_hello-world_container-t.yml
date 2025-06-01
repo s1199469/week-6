@@ -1,0 +1,12 @@
+name: create hello-world container on test
+on:
+  workflow_dispatch:
+    
+jobs:
+  install_container:
+    runs-on: self-hosted
+    steps:
+      - name: run day2operations on test
+        run: |
+          ansible-playbook -i test/inventory.ini ansible/create_hello-world_container-t.yml
+          

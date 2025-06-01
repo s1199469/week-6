@@ -1,0 +1,18 @@
+ #cloud-config
+ # gebruiker aanmaken:
+ # -default moet erin staan omdat anders de adminuser wordt verwijderd en SSH niet mogelijk is
+ # TEST
+users:
+  - default
+  - name: testuser
+    gecos: week-6-testuser
+    primary_group: testuser
+    groups: users
+# custom commands:
+
+runcmd:
+  - echo "cloudinit log" >/root/cloudinit.log
+  - echo "=============" >/root/cloudinit.log
+  - hostnamectl set-hostname s1199469-vm01azure
+  - hostname >>/root/cloudinit.log
+  - date >>/root/cloudinit.log
