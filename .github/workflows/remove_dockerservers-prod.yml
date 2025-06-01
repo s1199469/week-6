@@ -1,0 +1,13 @@
+name: remove machines with terraform from prod
+on:
+  workflow_dispatch:
+    
+jobs:
+  remove_servers:
+    runs-on: self-hosted
+    steps:
+      - name: run terraform VM Uninstall (prod)
+        run: |
+          terraform -chdir=prod init
+          terraform -chdir=prod destroy -var-file week6-prod.tfvars -auto-approve
+          

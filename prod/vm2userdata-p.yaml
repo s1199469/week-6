@@ -1,6 +1,7 @@
 #cloud-config
 # gebruiker aanmaken:
 # -default moet erin staan omdat anders de adminuser wordt verwijderd en SSH niet mogelijk is
+# PRUDUCTIE
 users:
   - default
   - name: testuser

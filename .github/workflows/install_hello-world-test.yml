@@ -1,0 +1,16 @@
+ # installeer test
+name: maak hello-world container aan in Docker
+on:
+  workflow_dispatch:
+    
+jobs:
+  install_hello-world_container:
+    runs-on: self-hosted
+     
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: install container (test)
+        run: |
+          ansible -i test/inventory.ini ansible/create_hello-world_container.yml
+          

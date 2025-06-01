@@ -1,0 +1,23 @@
+ # installeer prod
+name: deploy machines with terraform to prod
+on:
+  workflow_dispatch:
+    
+jobs:
+  install_servers:
+    runs-on: self-hosted
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: run terraform Deployment (prod)
+        run: |
+          terraform -chdir=prod init
+          terraform -chdir=prod validate
+          terraform -chdir=prod fmt
+          terraform -chdir=prod plan -var-file week6-prod.tfvars
+          terraform -chdir=prod apply -var-file week6-prod.tfvars -auto-approve
+       - name: run Day2 operations with terraform (prod)
+         run: |
+          ansible-playbook -i prod/inventory.ini ansible/day2operations-p.yml
+          

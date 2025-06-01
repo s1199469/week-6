@@ -1,0 +1,12 @@
+name: create hello-world container on prod
+on:
+  workflow_dispatch:
+    
+jobs:
+  install_container:
+    runs-on: self-hosted
+    steps:
+      - name: install_container
+        run: |
+          ansible-playbook -i prod/inventory.ini ansible/create_hello-world_container-p.yml
+          
